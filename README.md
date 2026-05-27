@@ -1,6 +1,6 @@
 # Shadepad
 
-A small Electron + React drawing app with fixed Gartic-like brush sizes, 10% opacity steps, eyedropper, project save/load, and PNG export.
+A small Electron + React drawing app with fixed brush sizes, 10% opacity steps, eyedropper, project save/load, PNG export, and a unique movable mask system for isolating parts of the canvas and reference image while drawing.
 
 ## Run in dev mode
 

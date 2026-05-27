@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  overflow: hidden;
+}
+
+
+/* Theme support for plain control buttons. The paper/canvas is not affected. */
+button:not(.text-white) {
+  color: var(--theme-button-text, #09090b);
+}
+
+button.border:not(.text-white) {
+  background: var(--theme-button, #ffffff);
+  border-color: var(--theme-border, #e4e4e7);
+}
+
+button.border:not(.text-white):hover {
+  background: var(--theme-button-hover, #f4f4f5);
+}
+
+input,
+select,
+textarea {
+  color: #09090b;
+}
+
+input[type="number"] {
+  background: var(--theme-button, #ffffff);
+  border-color: var(--theme-border, #e4e4e7);
+}
+
+
+/* Hide the OS cursor over the drawing surface so only the brush circle is visible. */
+.drawing-surface,
+.drawing-surface * {
+  cursor: none !important;
+  user-select: none;
+}
+
+
+/* Strong theme pass: keep controls readable in every app theme. */
+.theme-control-button,
+button:not(.theme-raw-color):not(.theme-sample):not(.text-white):not([class*="bg-zinc-900"]) {
+  background: var(--theme-button, #ffffff) !important;
+  color: var(--theme-button-text, #09090b) !important;
+  border-color: var(--theme-border, #e4e4e7) !important;
+}
+
+.theme-control-button:hover,
+button:not(.theme-raw-color):not(.theme-sample):not(.text-white):not([class*="bg-zinc-900"]):hover {
+  background: var(--theme-button-hover, #f4f4f5) !important;
+}
+
+.theme-active-button,
+button[class*="ring-2"] {
+  background: var(--theme-accent, #18181b) !important;
+  color: var(--theme-accent-text, #ffffff) !important;
+  border-color: var(--theme-accent, #18181b) !important;
+}
+
+.theme-raw-color {
+  color: transparent !important;
+}
+
+input[type="number"],
+input[type="text"],
+select,
+textarea {
+  background: var(--theme-input, #ffffff) !important;
+  color: var(--theme-input-text, #09090b) !important;
+  border-color: var(--theme-input-border, #e4e4e7) !important;
+}
+
+input[type="range"] {
+  accent-color: var(--theme-range-thumb, #18181b) !important;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  background: var(--theme-range-track, #e4e4e7) !important;
+  height: 8px;
+  border-radius: 999px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  background: var(--theme-range-thumb, #18181b) !important;
+  border: 1px solid var(--theme-border, #e4e4e7);
+  margin-top: -4px;
+}
+
+label,
+.theme-muted {
+  color: var(--theme-muted, #71717a) !important;
+}
+
+.theme-panel-card {
+  background: var(--theme-panel, #ffffff) !important;
+  color: var(--theme-text, #09090b) !important;
+  border-color: var(--theme-border, #e4e4e7) !important;
+}
+
+
+/* Extra themed controls for Shadepad update */
+.theme-panel-card .font-medium {
+  color: var(--theme-text, #09090b) !important;
+}
+
+input[type="text"] {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+
+/* Canvas workspace: keep panning/scrolling functional, but hide the visible scrollbars. */
+.canvas-workspace {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.canvas-workspace::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
